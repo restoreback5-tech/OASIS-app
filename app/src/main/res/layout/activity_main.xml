@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_turquoise"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <!-- Hora grande -->
+    <TextView
+        android:text="21:21"
+        android:textSize="48sp"
+        android:textColor="#006064"
+        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Avatar central -->
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/avatar_pensativo"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Burbuja de voz -->
+    <TextView
+        android:id="@+id/speech_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/speech_bubble"
+        android:padding="16dp"
+        android:text="Te están llamando"
+        android:textSize="18sp"
+        android:textColor="#006064"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Botones binarios gigantes -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_accept"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/circle_green"
+            android:text="✓"
+            android:textSize="70sp"
+            android:textColor="#FFFFFF"/>
+
+        <Space android:layout_width="48dp" android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_reject"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/circle_red"
+            android:text="✗"
+            android:textSize="70sp"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+</LinearLayout>
