@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.media.MediaPlayer
 import android.view.animation.AnimationUtils
+import android.view.View
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
