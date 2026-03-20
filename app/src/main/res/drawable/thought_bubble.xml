@@ -1,7 +1,5 @@
-cat > app/src/main/res/drawable/thought_bubble.xml << 'EOF'
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Círculos que forman la nube -->
     <item android:bottom="20dp">
         <shape android:shape="oval">
             <solid android:color="#FFFFFF"/>
@@ -20,7 +18,6 @@ cat > app/src/main/res/drawable/thought_bubble.xml << 'EOF'
             <size android:width="35dp" android:height="35dp"/>
         </shape>
     </item>
-    <!-- Base ovalada -->
     <item android:top="25dp">
         <shape android:shape="oval">
             <solid android:color="#FFFFFF"/>
@@ -28,4 +25,3 @@ cat > app/src/main/res/drawable/thought_bubble.xml << 'EOF'
         </shape>
     </item>
 </layer-list>
-EOF
