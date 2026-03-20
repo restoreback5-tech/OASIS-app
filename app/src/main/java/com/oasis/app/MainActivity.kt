@@ -1,4 +1,3 @@
-cat > app/src/main/java/com/oasis/app/MainActivity.kt << 'EOF'
 package com.oasis.app
 
 import android.os.Bundle
@@ -12,6 +11,7 @@ import java.util.Calendar
 import android.os.Handler
 import android.os.Looper
 import android.media.MediaPlayer
+import android.view.animation.AnimationUtils
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
@@ -25,41 +25,42 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // ===== Reloj dinámico =====
         val tvCurrentTime = findViewById<TextView>(R.id.tv_current_time)
-
         fun updateTime() {
             val calendar = Calendar.getInstance()
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
             tvCurrentTime.text = String.format("%02d:%02d", hour, minute)
         }
-
         updateTime()
-
         val handler = Handler(Looper.getMainLooper())
-        val runnable = object : Runnable {
+        handler.post(object : Runnable {
             override fun run() {
                 updateTime()
                 handler.postDelayed(this, 1000)
             }
-        }
-        handler.post(runnable)
-        // ===========================
+        })
 
-        // Referencias a los elementos
+        // Referencias
         speechBubble = findViewById(R.id.speech_bubble)
-        val btnAccept = findViewById<Button>(R.id.btn_accept)        val btnReject = findViewById<Button>(R.id.btn_reject)
+        val btnAccept = findViewById<Button>(R.id.btn_accept)
+        val btnReject = findViewById<Button>(R.id.btn_reject)
 
-        // Inicializar voz (Text-to-Speech)
+        // Animación de ondas turquesa
+        val waveBars = findViewById<ImageView>(R.id.wave_bars)
+        val callingIndicator = findViewById<View>(R.id.calling_indicator)
+        val anim = AnimationUtils.loadAnimation(this, R.anim.sound_waves)
+        waveBars?.startAnimation(anim)
+        callingIndicator?.startAnimation(anim?.apply { duration = 1000 })
+
+        // TTS
         tts = TextToSpeech(this, this)
 
-        // Botón Aceptar (Verde)
+        // Botones
         btnAccept.setOnClickListener {
             playSound(R.raw.volumeincremental)
             speak("Llamada aceptada")
             speechBubble.text = "Conectando..."
         }
-
-        // Botón Rechazar (Rojo)
         btnReject.setOnClickListener {
             playSound(R.raw.dock)
             speak("Llamada rechazada")
@@ -67,7 +68,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    // Configurar la voz cuando esté lista
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             tts.language = Locale("es", "MX")
@@ -75,26 +75,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    // Función para hablar
     private fun speak(text: String) {
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
         speechBubble.text = text
     }
 
-    // Función para reproducir sonidos
     private fun playSound(soundId: Int) {
         mediaPlayer?.release()
         mediaPlayer = MediaPlayer.create(this, soundId)
         mediaPlayer?.start()
     }
 
-    // Limpiar al cerrar
     override fun onDestroy() {
-        if (::tts.isInitialized) {
-            tts.stop()
-            tts.shutdown()
-        }
+        if (::tts.isInitialized) { tts.stop(); tts.shutdown() }
         mediaPlayer?.release()
         super.onDestroy()
-    }}
-EOF
+    }
+}

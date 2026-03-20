@@ -35,17 +35,40 @@
         android:layout_marginBottom="4dp"
         android:layout_gravity="center_horizontal"/>
 
-    <!-- Burbuja de voz -->
-    <TextView
-        android:id="@+id/speech_bubble"
+    <!-- Indicador de llamada entrante con ondas turquesa -->
+    <LinearLayout
+        android:id="@+id/calling_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/speech_bubble"
-        android:padding="16dp"
-        android:text="Te están llamando"
-        android:textSize="18sp"
-        android:textColor="#006064"
-        android:layout_marginBottom="40dp"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="40dp">
+
+        <!-- Barras de sonido animadas -->
+        <ImageView
+            android:id="@+id/wave_bars"
+            android:layout_width="80dp"            android:layout_height="60dp"
+            android:src="@drawable/wave_bars"
+            android:layout_marginBottom="12dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Texto con fondo degradado turquesa -->
+        <TextView
+            android:id="@+id/speech_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sound_waves_background"
+            android:text="Te están llamando"
+            android:textSize="20sp"
+            android:textColor="#006064"
+            android:textStyle="bold"
+            android:paddingLeft="24dp"
+            android:paddingTop="12dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="12dp"
+            android:elevation="4dp"/>
+
+    </LinearLayout>
 
     <!-- Botones binarios gigantes -->
     <LinearLayout
@@ -74,5 +97,4 @@
             android:textColor="#FFFFFF"/>
 
     </LinearLayout>
-
 </LinearLayout>
