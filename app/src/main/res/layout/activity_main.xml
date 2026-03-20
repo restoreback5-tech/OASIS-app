@@ -7,6 +7,17 @@
     android:gravity="center_horizontal"
     android:padding="16dp">
 
+    <!-- Hora grande (ID: tv_current_time) -->
+    <TextView
+        android:id="@+id/tv_current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21:21"
+        android:textSize="48sp"
+        android:textColor="#006064"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"/>
+
     <!-- Avatar en la parte superior -->
     <ImageView
         android:id="@+id/avatar"
@@ -20,7 +31,7 @@
         android:id="@+id/speech_bubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Te están llamando"
+        android:text="Bienvenido a OASIS"
         android:textSize="18sp"
         android:textColor="#006064"
         android:textStyle="bold"
@@ -36,7 +47,6 @@
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:padding="8dp">
-
         <!-- 📞 LLAMAR -->
         <Button
             android:id="@+id/btn_call"
@@ -85,8 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="8dp"
+            android:layout_rowWeight="1"            android:layout_margin="8dp"
             android:background="@drawable/dashboard_button"
             android:drawableTop="@drawable/ic_more"
             android:text="Más"
