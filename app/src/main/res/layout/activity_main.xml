@@ -26,23 +26,18 @@
         android:src="@drawable/avatar_pensativo"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Nube de pensamiento (mejorada) -->
-    <ImageView
-        android:id="@+id/thought_bubble"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:src="@drawable/thought_bubble"
-        android:layout_marginBottom="4dp"
-        android:layout_gravity="center_horizontal"/>
-
     <!-- Indicador de llamada entrante con ondas turquesa -->
     <LinearLayout
-        android:id="@+id/calling_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginBottom="40dp">
+        <!-- Texto simple sin ondas -->
+   <TextView
+    android:id="@+id/speech_bubble"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Te están llamando"
+    android:textSize="20sp"
+    android:textColor="#006064"
+    android:textStyle="bold"
+    android:layout_marginBottom="40dp"/>
 
         <!-- Barras de sonido animadas -->
         <ImageView
