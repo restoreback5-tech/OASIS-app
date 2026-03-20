@@ -9,12 +9,14 @@
 
     <!-- Hora grande -->
     <TextView
+       android:id="@+id/tv_current_time"
         android:text="21:21"
         android:textSize="48sp"
         android:textColor="#006064"
         android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"/>
 
     <!-- Avatar central -->
     <ImageView
@@ -31,10 +33,19 @@
         android:layout_height="wrap_content"
         android:background="@drawable/speech_bubble"
         android:padding="16dp"
-        android:text="Te están llamando"
+        android:text="Conectando..."
         android:textSize="18sp"
         android:textColor="#006064"
         android:layout_marginBottom="40dp"/>
+
+<!-- Nube de pensamiento (nuevo) -->
+<ImageView
+    android:id="@+id/thought_bubble"
+    android:layout_width="80dp"
+    android:layout_height="60dp"
+    android:src="@drawable/thought_bubble"
+    android:layout_marginBottom="8dp"
+    android:layout_gravity="center_horizontal"/>
 
     <!-- Botones binarios gigantes -->
     <LinearLayout
