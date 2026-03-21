@@ -69,33 +69,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         when {
             cmd.contains("llamar") || cmd.contains("llama") -> {
                 val contactName = extractContactName(cmd)
-                if (contactName.isNotEmpty()) {
-                    searchAndCall(contactName)
-                } else {
-                    playSound(R.raw.volumeincremental)
-                    speak("Abriendo teléfono")
-                    startActivity(Intent(Intent.ACTION_DIAL))
-                }
+                if (contactName.isNotEmpty()) { searchAndCall(contactName) }
+                else { playSound(R.raw.volumeincremental); speak("Abriendo teléfono"); startActivity(Intent(Intent.ACTION_DIAL)) }
             }
             cmd.contains("mensaje") || cmd.contains("whatsapp") || cmd.contains("wasap") -> {
                 val contactName = extractContactName(cmd)
-                if (contactName.isNotEmpty()) {
-                    searchAndMessage(contactName)
-                } else {
-                    playSound(R.raw.volumeincremental)
-                    speak("Abriendo mensajes")
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
-                }
+                if (contactName.isNotEmpty()) { searchAndMessage(contactName) }
+                else { playSound(R.raw.volumeincremental); speak("Abriendo mensajes"); startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:"))) }
             }
             cmd.contains("contacto") || cmd.contains("agenda") || cmd.contains("buscar") -> {
                 val contactName = extractContactName(cmd)
-                if (contactName.isNotEmpty()) {
-                    searchContacts(contactName)
-                } else {
-                    playSound(R.raw.volumeincremental)
-                    speak("Abriendo contactos")
-                    startActivity(Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI))
-                }            }
+                if (contactName.isNotEmpty()) { searchContacts(contactName) }
+                else { playSound(R.raw.volumeincremental); speak("Abriendo contactos"); startActivity(Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI)) }
+            }
             cmd.contains("hola") || cmd.contains("buenas") -> { speak("Hola, soy OASIS. ¿En qué te ayudo?") }
             else -> { speak("Di: llamar, mensajes o contactos") }
         }
@@ -109,8 +95,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun searchAndCall(contactName: String) {
         val uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI
         val projection = arrayOf(ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
-        val selection = "${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} LIKE ?"
-        val selectionArgs = arrayOf("%$contactName%")
+        val selection = "${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} LIKE ?"        val selectionArgs = arrayOf("%$contactName%")
         val cursor: Cursor? = contentResolver.query(uri, projection, selection, selectionArgs, null)
         if (cursor != null && cursor.moveToFirst()) {
             val number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER))
@@ -119,11 +104,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             playSound(R.raw.volumeincremental)
             speak("Llamando a $name")
             startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$number")))
-        } else {
-            cursor?.close()
-            playSound(R.raw.volumeincremental)
-            speak("No encontré a $contactName en tus contactos")
-        }
+        } else { cursor?.close(); playSound(R.raw.volumeincremental); speak("No encontré a $contactName en tus contactos") }
     }
     private fun searchAndMessage(contactName: String) {
         val uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI
@@ -138,13 +119,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             playSound(R.raw.volumeincremental)
             speak("Enviando mensaje a $name")
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:$number")))
-        } else {
-            cursor?.close()
-            playSound(R.raw.volumeincremental)
-            speak("No encontré a $contactName en tus contactos")
-        }
+        } else { cursor?.close(); playSound(R.raw.volumeincremental); speak("No encontré a $contactName en tus contactos") }
     }
-    private fun searchContacts(contactName: String) {        val uri = ContactsContract.Contacts.CONTENT_URI
+    private fun searchContacts(contactName: String) {
+        val uri = ContactsContract.Contacts.CONTENT_URI
         val selection = "${ContactsContract.Contacts.DISPLAY_NAME} LIKE ?"
         val selectionArgs = arrayOf("%$contactName%")
         val cursor: Cursor? = contentResolver.query(uri, null, selection, selectionArgs, null)
@@ -153,11 +131,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             playSound(R.raw.volumeincremental)
             speak("Encontré contactos con $contactName")
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("content://com.android.contacts/contacts/?filter=$contactName")))
-        } else {
-            cursor?.close()
-            playSound(R.raw.volumeincremental)
-            speak("No encontré contactos con $contactName")
-        }
+        } else { cursor?.close(); playSound(R.raw.volumeincremental); speak("No encontré contactos con $contactName") }
     }
     private fun playSound(id: Int) { mediaPlayer?.release(); mediaPlayer = MediaPlayer.create(this, id); mediaPlayer?.start() }
     private fun showAppsMenuDialog() {
@@ -170,16 +144,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         dialogView.findViewById<Button>(R.id.app_flashlight).setOnClickListener { speak("Activa la linterna desde el panel de notificaciones"); dialog.dismiss() }
         dialogView.findViewById<Button>(R.id.app_calendar).setOnClickListener { try { startActivity(Intent("android.intent.action.MAIN").apply { addCategory("android.intent.category.APP_CALENDAR") }) } catch (e: Exception) { speak("Calendario no disponible") }; dialog.dismiss() }
         dialogView.findViewById<Button>(R.id.btn_close_menu).setOnClickListener { dialog.dismiss() }
-        dialog.show()
-    }
+        dialog.show()    }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 100 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             speak("Permiso de micrófono concedido")
             handler.postDelayed({ startListening() }, 1000)
-        } else {
-            speechBubble.text = "Activa el micrófono en ajustes"
-        }
+        } else { speechBubble.text = "Activa el micrófono en ajustes" }
     }
     override fun onDestroy() {
         if (::tts.isInitialized) { tts.stop(); tts.shutdown() }
