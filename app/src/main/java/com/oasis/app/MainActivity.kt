@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // Activar fondo animado
         val animatedBg = findViewById<View>(R.id.animated_bg)
         val animationDrawable = animatedBg.background as? AnimationDrawable
-        animationDrawable?.setEnteringCallback(null)
         animationDrawable?.start()
 
         val tvCurrentTime = findViewById<TextView>(R.id.tv_current_time)

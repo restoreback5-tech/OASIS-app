@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_ic_message.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/ic_message.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/raw_volumeincremental.ogg.flat",
+        "source": "com.oasis.app-main-33:/raw/volumeincremental.ogg"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_gradient_frame_2.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/gradient_frame_2.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_circle_red.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/circle_red.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_ic_more.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/ic_more.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_ic_oasis_logo.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/ic_oasis_logo.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_header_gradient.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/header_gradient.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.oasis.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/anim_sound_waves.xml.flat",
+        "source": "com.oasis.app-main-33:/anim/sound_waves.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_ic_phone.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/ic_phone.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_gradient_turquoise.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/gradient_turquoise.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_wave_bars.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/wave_bars.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_circle_green.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/circle_green.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_speech_bubble.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/speech_bubble.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_dashboard_button.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/dashboard_button.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/raw_dock.ogg.flat",
+        "source": "com.oasis.app-main-33:/raw/dock.ogg"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_sound_waves_background.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/sound_waves_background.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_gradient_frame_3.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/gradient_frame_3.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_avatar_pensativo.png.flat",
+        "source": "com.oasis.app-main-33:/drawable/avatar_pensativo.png"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_animated_background.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/animated_background.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_gradient_frame_1.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/gradient_frame_1.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_thought_bubble.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/thought_bubble.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.oasis.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_ic_contacts.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/ic_contacts.xml"
+    },
+    {
+        "merged": "com.oasis.app-merged_res-31:/drawable_bottom_royal_blue.xml.flat",
+        "source": "com.oasis.app-main-33:/drawable/bottom_royal_blue.xml"
+    }
+]
