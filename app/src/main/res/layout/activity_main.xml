@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Fondo animado -->
+    <!-- Fondo animado premium -->
     <View
         android:id="@+id/animated_bg"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:gravity="center_horizontal"
         android:padding="16dp">
 
-        <!-- Hora -->
+        <!-- Hora con GoogleSans -->
         <TextView
             android:id="@+id/tv_current_time"
             android:layout_width="wrap_content"
@@ -26,8 +26,9 @@
             android:text="21:21"
             android:textSize="48sp"
             android:textColor="#006064"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="sans-serif-medium"/>
+            android:fontFamily="@font/google_sans_medium"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Avatar -->
         <ImageView
@@ -37,7 +38,7 @@
             android:src="@drawable/avatar_pensativo"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Texto -->
+        <!-- Texto de estado con GoogleSans -->
         <TextView
             android:id="@+id/speech_bubble"
             android:layout_width="wrap_content"
@@ -45,10 +46,11 @@
             android:text="Bienvenido a OASIS"
             android:textSize="18sp"
             android:textColor="#006064"
+            android:fontFamily="@font/google_sans_medium"
             android:textStyle="bold"
             android:layout_marginBottom="24dp"/>
 
-        <!-- Botones -->
+        <!-- Botones 2x2 con GoogleSans -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -59,22 +61,15 @@
             android:columnOrderPreserved="false"
             android:padding="8dp">
 
-            <Button android:id="@+id/btn_call" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_phone" android:text="Llamar" android:textSize="16sp" android:textColor="#FFFFFF"/>
+            <Button android:id="@+id/btn_call" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_phone" android:text="Llamar" android:textSize="16sp" android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium"/>
 
-            <Button android:id="@+id/btn_messages" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_message" android:text="Mensajes" android:textSize="16sp" android:textColor="#FFFFFF"/>
+            <Button android:id="@+id/btn_messages" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_message" android:text="Mensajes" android:textSize="16sp" android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium"/>
 
-            <Button android:id="@+id/btn_contacts" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_contacts" android:text="Contactos" android:textSize="16sp" android:textColor="#FFFFFF"/>
+            <Button android:id="@+id/btn_contacts" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_contacts" android:text="Contactos" android:textSize="16sp" android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium"/>
 
-            <Button android:id="@+id/btn_more" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_more" android:text="Más" android:textSize="16sp" android:textColor="#FFFFFF"/>
+            <Button android:id="@+id/btn_more" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="8dp" android:background="@drawable/dashboard_button" android:drawableTop="@drawable/ic_more" android:text="Más" android:textSize="16sp" android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium"/>
 
         </GridLayout>
-
-        <!-- Franja azul rey inferior -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="@drawable/bottom_royal_blue"
-            android:layout_gravity="bottom"/>
 
     </LinearLayout>
 
