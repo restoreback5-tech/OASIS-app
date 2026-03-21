@@ -32,10 +32,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicializar TTS
         tts = TextToSpeech(this, this)
 
-        // Activar fondo animado
         val animatedBg = findViewById<View>(R.id.animated_bg)
         val animationDrawable = animatedBg.background as? AnimationDrawable
         animationDrawable?.start()
@@ -43,27 +41,23 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val tvCurrentTime = findViewById<TextView>(R.id.tv_current_time)
         speechBubble = findViewById(R.id.speech_bubble)
 
-        // Reloj
         fun updateTime() {
             val c = Calendar.getInstance()
             tvCurrentTime.text = String.format("%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE))
-        }        updateTime()
+        }
+        updateTime()
         Handler(Looper.getMainLooper()).post(object : Runnable {
-            override fun run() {
-                updateTime()
+            override fun run() {                updateTime()
                 Handler(Looper.getMainLooper()).postDelayed(this, 1000)
             }
         })
 
-        // Pedir permiso de micrófono
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 100)
         }
 
-        // Iniciar voz después de 2 segundos
         Handler(Looper.getMainLooper()).postDelayed({ startListening() }, 2000)
 
-        // Botones
         findViewById<Button>(R.id.btn_call).setOnClickListener {
             playSound(R.raw.volumeincremental)
             speak("¿A quién quieres llamar?")
@@ -88,7 +82,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    // ✅ onInit FUERA de onCreate
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             tts.language = Locale("es", "MX")
@@ -96,16 +89,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    // ✅ speak FUERA de onCreate    private fun speak(text: String) {
+    private fun speak(text: String) {
         if (::tts.isInitialized) {
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
             speechBubble.text = text
         }
     }
 
-    private fun startListening() {
-        if (!SpeechRecognizer.isRecognitionAvailable(this)) return
-
+    private fun startListening() {        if (!SpeechRecognizer.isRecognitionAvailable(this)) return
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
         speechRecognizer?.setRecognitionListener(object : RecognitionListener {
             override fun onReadyForSpeech(params: Bundle?) { speechBubble.text = "🎤 Escuchando..." }
@@ -128,7 +119,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun onPartialResults(partialResults: Bundle?) {}
             override fun onEvent(eventType: Int, params: Bundle?) {}
         })
-
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
             putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale("es", "MX").language)
@@ -155,8 +145,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             cmd.contains("hola") || cmd.contains("buenas") -> {
                 speak("Hola, soy OASIS. ¿En qué te ayudo?")
-            }
-            else -> {
+            }            else -> {
                 speak("Di: llamar, mensajes o contactos")
             }
         }
@@ -168,7 +157,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         mediaPlayer?.start()
     }
 
-    // ✅ onDestroy FUERA de onCreate
     override fun onDestroy() {
         if (::tts.isInitialized) { tts.stop(); tts.shutdown() }
         speechRecognizer?.destroy()
