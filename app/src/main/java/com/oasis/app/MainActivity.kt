@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // Reloj
         fun updateTime() {
             val c = Calendar.getInstance()
-            tvCurrentTime.text = String.format("%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE))        }
-        updateTime()
+            tvCurrentTime.text = String.format("%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE))
+        }        updateTime()
         Handler(Looper.getMainLooper()).post(object : Runnable {
             override fun run() {
                 updateTime()
@@ -95,8 +95,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             Handler(Looper.getMainLooper()).postDelayed({ speak("Bienvenido a OASIS") }, 500)
         }
     }
-    // ✅ speak FUERA de onCreate
-    private fun speak(text: String) {
+
+    // ✅ speak FUERA de onCreate    private fun speak(text: String) {
         if (::tts.isInitialized) {
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
             speechBubble.text = text
@@ -144,7 +144,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 startActivity(Intent(Intent.ACTION_DIAL))
             }
             cmd.contains("mensaje") || cmd.contains("whatsapp") -> {
-                playSound(R.raw.volumeincremental)                speak("Abriendo mensajes")
+                playSound(R.raw.volumeincremental)
+                speak("Abriendo mensajes")
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
             }
             cmd.contains("contacto") || cmd.contains("agenda") -> {
