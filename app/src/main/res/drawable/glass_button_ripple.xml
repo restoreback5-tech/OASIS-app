@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="#30FFFFFF">
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="#40FFFFFF">
     <item android:id="@android:id/background">
         <layer-list>
+            <!-- Outer glow shadow -->
             <item>
                 <shape android:shape="rectangle">
-                    <corners android:radius="40dp"/>
-                    <solid android:color="#20000000"/>
+                    <corners android:radius="50dp"/>
+                    <solid android:color="#30000000"/>
                 </shape>
             </item>
-            <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="4dp">
+            <!-- Main liquid body with gradient -->
+            <item android:top="3dp" android:left="3dp" android:right="3dp" android:bottom="6dp">
                 <shape android:shape="rectangle">
-                    <corners android:radius="40dp"/>
-                    <solid android:color="#99FFFFFF"/>
-                    <stroke android:width="1dp" android:color="#FFFFFFFF"/>
-                    <gradient android:startColor="#FFFFFFFF" android:endColor="#80FFFFFF" android:angle="135"/>
+                    <corners android:radius="50dp"/>
+                    <solid android:color="#AAFFFFFF"/>
+                    <stroke android:width="2dp" android:color="#FFFFFFFF"/>
+                    <gradient 
+                        android:startColor="#FFFFFFFF" 
+                        android:centerColor="#D0FFFFFF" 
+                        android:endColor="#90FFFFFF" 
+                        android:angle="135"
+                        android:type="linear"/>
+                </shape>
+            </item>
+            <!-- Highlight reflection (top-left) -->
+            <item android:top="8dp" android:left="8dp" android:right="40dp" android:bottom="40dp">
+                <shape android:shape="oval">
+                    <solid android:color="#40FFFFFF"/>
                 </shape>
             </item>
         </layer-list>

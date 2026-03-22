@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="40dp"/>
+            <solid android:color="#40000000"/>
+        </shape>
+    </item>
+    <!-- Main liquid body -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="40dp"/>
+            <solid android:color="#CCFFFFFF"/>
+            <stroke android:width="2dp" android:color="#FFFFFFFF"/>
+            <gradient 
+                android:startColor="#FFFFFFFF" 
+                android:endColor="#B0FFFFFF" 
+                android:angle="135"
+                android:type="linear"/>
+        </shape>
+    </item>
+</layer-list>
