@@ -11,26 +11,18 @@ import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsControllerCompat
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var tts: TextToSpeech
-    private lateinit var speechBubble: Any // Ajustar según el tipo real en tu proyecto
+    private lateinit var speechBubble: Any // Ajustar según el tipo real
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Configuración para pantalla completa y barra transparente
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         window.statusBarColor = android.graphics.Color.TRANSPARENT
-        
-        // Opcional: Controlar si los iconos de la barra son oscuros o claros
-        val controller = WindowInsetsControllerCompat(window, window.decorView)
-        controller.isAppearanceLightStatusBars = true
 
-        // Aquí iría tu setContentView(R.layout.activity_main)
+        // Lógica de inicialización
     }
 
     override fun onInit(status: Int) {
@@ -52,7 +44,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun startListening() {
         try {
             if (!SpeechRecognizer.isRecognitionAvailable(this)) {
-                // Manejar error de disponibilidad
+                // Manejar error
             }
         } catch (e: Exception) {
             e.printStackTrace()
@@ -105,7 +97,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun playSound(id: Int) {
         try {
-            // Lógica de sonido
+            // mediaPlayer?.release()
+            // mediaPlayer = ...
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -122,8 +115,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun showAppsMenuDialog() {
         try {
-            val dialogView = layoutInflater.inflate(0, null) // Cambiar 0 por el layout real
-            // Lógica de menú
+            val dialogView = layoutInflater.inflate(0, null) // Reemplazar 0 por el layout real
+            // Lógica de diálogo
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -131,6 +124,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        // Lógica de permisos
     }
 
     override fun onDestroy() {
@@ -145,4 +139,3 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 }
-
