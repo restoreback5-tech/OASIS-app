@@ -17,7 +17,7 @@
         <!-- Hora -->
         <TextView android:id="@+id/tv_current_time" android:layout_width="wrap_content" 
             android:layout_height="wrap_content" android:text="21:21" android:textSize="48sp" 
-            android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium" 
+            android:textColor="#004D40" android:fontFamily="@font/google_sans_medium" 
             android:layout_marginTop="32dp" android:layout_marginBottom="16dp" 
             android:elevation="4dp" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
 
@@ -29,7 +29,7 @@
         <!-- Texto de estado -->
         <TextView android:id="@+id/speech_bubble" android:layout_width="wrap_content" 
             android:layout_height="wrap_content" android:text="Bienvenido a OASIS" android:textSize="18sp" 
-            android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium" android:textStyle="bold" 
+            android:textColor="#004D40" android:fontFamily="@font/google_sans_medium" android:textStyle="bold" 
             android:layout_marginBottom="24dp" android:elevation="4dp"
             android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
 
