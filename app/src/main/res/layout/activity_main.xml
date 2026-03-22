@@ -42,31 +42,31 @@
             android:layout_marginBottom="32dp" android:elevation="4dp"
             android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
 
-        <!-- Botones 2x2 CIRCULARES -->
+        <!-- Botones 2x2 CIRCULARES PERFECTOS -->
         <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" 
             android:columnCount="2" android:rowCount="2" 
             android:alignmentMode="alignMargins" android:columnOrderPreserved="false" 
-            android:padding="8dp">
+            android:padding="20dp">
 
-            <Button android:id="@+id/btn_call" android:layout_width="120dp" android:layout_height="120dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
+            <Button android:id="@+id/btn_call" android:layout_width="130dp" android:layout_height="130dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_phone" 
-                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
+                android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_messages" android:layout_width="120dp" android:layout_height="120dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
+            <Button android:id="@+id/btn_messages" android:layout_width="130dp" android:layout_height="130dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_message" 
-                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
+                android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_contacts" android:layout_width="120dp" android:layout_height="120dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
+            <Button android:id="@+id/btn_contacts" android:layout_width="130dp" android:layout_height="130dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_contacts" 
-                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
+                android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_more" android:layout_width="120dp" android:layout_height="120dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
+            <Button android:id="@+id/btn_more" android:layout_width="130dp" android:layout_height="130dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_more" 
-                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
+                android:gravity="center" android:elevation="6dp"/>
 
         </GridLayout>
 
