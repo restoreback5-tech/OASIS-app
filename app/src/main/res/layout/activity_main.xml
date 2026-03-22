@@ -8,16 +8,8 @@
         android:layout_height="match_parent" android:background="#000000"/>
 
     <!-- ORB ANIMADO (Lottie) -->
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/orb_animation"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        app:lottie_rawRes="@raw/orb_animation"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:alpha="0.9"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp"/>
+    <!-- Orb estático (reemplazo de Lottie) -->
+    <View android:id="@+id/orb_animation" android:layout_width="250dp" android:layout_height="250dp" android:background="@drawable/circle_green" android:alpha="0.9" android:layout_gravity="center_horizontal" android:layout_marginTop="180dp"/>
 
     <!-- Contenido principal -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
