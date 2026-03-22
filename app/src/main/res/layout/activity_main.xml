@@ -7,6 +7,7 @@
     <View android:id="@+id/animated_bg" android:layout_width="match_parent" 
         android:layout_height="match_parent" android:background="#000000"/>
 
+    <!-- ORB ANIMADO (Lottie) -->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/orb_animation"
         android:layout_width="250dp"
@@ -29,7 +30,7 @@
             android:layout_marginTop="40dp" android:layout_marginBottom="20dp" 
             android:elevation="4dp" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
 
-        <!-- Espacio para el orb (ya está en FrameLayout) -->
+        <!-- Espacio para el orb -->
         <View android:layout_width="match_parent" 
             android:layout_height="250dp"
             android:layout_marginBottom="20dp"/>
@@ -41,31 +42,31 @@
             android:layout_marginBottom="32dp" android:elevation="4dp"
             android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
 
-        <!-- Botones 2x2 estilo líquido -->
+        <!-- Botones 2x2 CIRCULARES -->
         <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" 
             android:columnCount="2" android:rowCount="2" 
             android:alignmentMode="alignMargins" android:columnOrderPreserved="false" 
-            android:padding="4dp">
+            android:padding="8dp">
 
-            <Button android:id="@+id/btn_call" android:layout_width="140dp" android:layout_height="140dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="10dp" 
+            <Button android:id="@+id/btn_call" android:layout_width="120dp" android:layout_height="120dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_phone" 
-                android:drawablePadding="-60dp" android:gravity="center" android:elevation="6dp"/>
+                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_messages" android:layout_width="140dp" android:layout_height="140dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="10dp" 
+            <Button android:id="@+id/btn_messages" android:layout_width="120dp" android:layout_height="120dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_message" 
-                android:drawablePadding="-60dp" android:gravity="center" android:elevation="6dp"/>
+                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_contacts" android:layout_width="140dp" android:layout_height="140dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="10dp" 
+            <Button android:id="@+id/btn_contacts" android:layout_width="120dp" android:layout_height="120dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_contacts" 
-                android:drawablePadding="-60dp" android:gravity="center" android:elevation="6dp"/>
+                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
 
-            <Button android:id="@+id/btn_more" android:layout_width="140dp" android:layout_height="140dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="10dp" 
+            <Button android:id="@+id/btn_more" android:layout_width="120dp" android:layout_height="120dp" 
+                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="15dp" 
                 android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_more" 
-                android:drawablePadding="-60dp" android:gravity="center" android:elevation="6dp"/>
+                android:drawablePadding="-80dp" android:gravity="center" android:elevation="6dp"/>
 
         </GridLayout>
 
