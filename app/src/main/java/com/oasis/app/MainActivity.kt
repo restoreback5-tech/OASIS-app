@@ -19,9 +19,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
-        window.statusBarColor = android.graphics.Color.TRANSPARENT
-
         // Lógica de inicialización
     }
 
@@ -139,3 +136,4 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 }
+
