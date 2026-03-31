@@ -1,0 +1,31 @@
+# === Gradle ===
+.gradle/
+**/build/
+!**/src/main/
+!**/src/test/
+!**/src/androidTest/
+
+# === Android Studio ===
+*.iml
+*.iws
+*.ipr
+.idea/
+captures/
+
+# === APKs y AARs ===
+*.apk
+*.ap_
+*.aab
+*.aar
+
+# === Kotlin ===
+*.kotlin_module
+*.kotlin_built
+
+# === Logs ===
+*.log
+local.properties
+
+# === System files ===
+.DS_Store
+Thumbs.db
