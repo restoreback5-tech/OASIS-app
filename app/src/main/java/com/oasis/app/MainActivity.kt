@@ -38,19 +38,16 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicializar TTS
         tts = TextToSpeech(this, this)
 
-        // Iniciar animación de fondo
         findViewById<View>(R.id.animated_bg)?.let { bg ->
             (bg.background as? AnimationDrawable)?.start()
         }
 
-        // Configurar hora
-        val tvCurrentTime = findViewById<TextView>(R.id.tv_current_time)        speechBubble = findViewById(R.id.speech_bubble)
+        val tvCurrentTime = findViewById<TextView>(R.id.tv_current_time)
+        speechBubble = findViewById(R.id.speech_bubble)
 
-        fun updateTime() {
-            val c = Calendar.getInstance()
+        fun updateTime() {            val c = Calendar.getInstance()
             tvCurrentTime.text = String.format(
                 "%02d:%02d",
                 c.get(Calendar.HOUR_OF_DAY),
@@ -67,7 +64,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
         handler.post(updateRunnable!!)
 
-        // Permiso de micrófono
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.RECORD_AUDIO
@@ -82,7 +78,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             handler.postDelayed({ startListening() }, 2000)
         }
 
-        // Botón: Llamar
+        // Sonido de inicio
+        handler.postDelayed({
+            playSound(R.raw.inicio)
+        }, 1000)
+
         findViewById<Button>(R.id.btn_call).setOnClickListener {
             try {
                 playSound(R.raw.touch)
@@ -93,31 +93,25 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
 
-        // Botón: Mensajes
         findViewById<Button>(R.id.btn_messages).setOnClickListener {
             try {
-                playSound(R.raw.touch)                speak("Abriendo mensajes")
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
+                playSound(R.raw.touch)
+                speak("Abriendo mensajes")                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
             } catch (e: Exception) {
                 speak("Error al abrir mensajes")
             }
         }
 
-        // Botón: Contactos
         findViewById<Button>(R.id.btn_contacts).setOnClickListener {
             try {
                 playSound(R.raw.touch)
                 speak("Abriendo contactos")
-                startActivity(Intent(
-                    Intent.ACTION_VIEW,
-                    ContactsContract.Contacts.CONTENT_URI
-                ))
+                startActivity(Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI))
             } catch (e: Exception) {
                 speak("Error al abrir contactos")
             }
         }
 
-        // Botón: Más
         findViewById<Button>(R.id.btn_more).setOnClickListener {
             try {
                 playSound(R.raw.touch)
@@ -145,17 +139,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         } catch (e: Exception) {
             // Ignorar error
-        }    }
+        }
+    }
 
     private fun startListening() {
         try {
             if (!SpeechRecognizer.isRecognitionAvailable(this)) return
-
             speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
             speechRecognizer?.setRecognitionListener(object : RecognitionListener {
 
                 override fun onReadyForSpeech(params: Bundle?) {
                     speechBubble.text = "🎤 Escuchando..."
+                    playSound(R.raw.escuchando)
                 }
 
                 override fun onBeginningOfSpeech() {
@@ -176,7 +171,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     val matches = results?.getStringArrayList(
                         SpeechRecognizer.RESULTS_RECOGNITION
                     )
-                    if (!matches.isNu	llOrEmpty()) {
+                    if (!matches.isNullOrEmpty()) {
                         val cmd = matches[0].lowercase(Locale.getDefault())
                         processCommand(cmd)
                     }
@@ -194,11 +189,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
                 )
                 putExtra(
-                    RecognizerIntent.EXTRA_LANGUAGE,                    Locale("es", "MX").language
+                    RecognizerIntent.EXTRA_LANGUAGE,
+                    Locale("es", "MX").language
                 )
             }
             speechRecognizer?.startListening(intent)
-
         } catch (e: Exception) {
             speak("Error al escuchar")
         }
@@ -212,7 +207,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     if (contactName.isNotEmpty()) {
                         searchAndCall(contactName)
                     } else {
-                        playSound(R.raw.confirmar)
+                        playSound(R.raw.touch)
                         speak("Abriendo teléfono")
                         startActivity(Intent(Intent.ACTION_DIAL))
                     }
@@ -223,7 +218,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     if (contactName.isNotEmpty()) {
                         searchAndMessage(contactName)
                     } else {
-                        playSound(R.raw.error)
+                        playSound(R.raw.touch)
                         speak("Abriendo mensajes")
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
                     }
@@ -234,24 +229,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     if (contactName.isNotEmpty()) {
                         searchContacts(contactName)
                     } else {
-                        playSound(R.raw.confirmar)
+                        playSound(R.raw.touch)
                         speak("Abriendo contactos")
-                        startActivity(Intent(
-                            Intent.ACTION_VIEW,
-                            ContactsContract.Contacts.CONTENT_URI
-                        ))
+                        startActivity(Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI))
                     }
                 }
 
-                cmd.contains("hola") || cmd.contains("buenas") -> {                    speak("Hola, soy OASIS. ¿En qué te ayudo?")
+                cmd.contains("hola") || cmd.contains("buenas") -> {
+                    speak("Hola, soy OASIS. ¿En qué te ayudo?")
                 }
 
                 else -> {
                     speak("Di: llamar, mensajes o contactos")
                 }
             }
-        } catch (e: Exception) {
-            speak("No entendí el comando")
+        } catch (e: Exception) {            speak("No entendí el comando")
         }
     }
 
@@ -291,16 +283,16 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
                 )
                 cursor.close()
-                playSound(R.raw.error)
-                speak("Llamando a $name")                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$number")))
+                playSound(R.raw.confirmar)
+                speak("Llamando a $name")
+                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$number")))
             } else {
                 cursor?.close()
-                playSound(R.raw.confirmar)
+                playSound(R.raw.error)
                 speak("No encontré a $contactName en tus contactos")
             }
         } catch (e: Exception) {
-            speak("Error al buscar contacto")
-        }
+            speak("Error al buscar contacto")        }
     }
 
     private fun searchAndMessage(contactName: String) {
@@ -324,12 +316,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
                 )
                 cursor.close()
-                playSound(R.raw.error)
+                playSound(R.raw.confirmar)
                 speak("Enviando mensaje a $name")
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:$number")))
             } else {
                 cursor?.close()
-                playSound(R.raw.confirmar)
+                playSound(R.raw.error)
                 speak("No encontré a $contactName en tus contactos")
             }
         } catch (e: Exception) {
@@ -341,21 +333,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         try {
             val uri = ContactsContract.Contacts.CONTENT_URI
             val selection = "${ContactsContract.Contacts.DISPLAY_NAME} LIKE ?"
-            val selectionArgs = arrayOf("%$contactName%")            val cursor: Cursor? = contentResolver.query(
+            val selectionArgs = arrayOf("%$contactName%")
+            val cursor: Cursor? = contentResolver.query(
                 uri, null, selection, selectionArgs, null
             )
 
             if (cursor != null && cursor.count > 0) {
                 cursor.close()
-                playSound(350)
-                speak("Encontré contactos con $contactName")
-                startActivity(Intent(
+                playSound(R.raw.confirmar)
+                speak("Encontré contactos con $contactName")                startActivity(Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse("content://com.android.contacts/contacts/?filter=$contactName")
                 ))
             } else {
                 cursor?.close()
-                playSound(R.raw.touch)
+                playSound(R.raw.error)
                 speak("No encontré contactos con $contactName")
             }
         } catch (e: Exception) {
@@ -390,15 +382,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             dialogView.findViewById<Button>(R.id.app_camera)?.setOnClickListener {
-                try {                    startActivity(Intent("android.media.action.IMAGE_CAPTURE"))
+                try {
+                    startActivity(Intent("android.media.action.IMAGE_CAPTURE"))
                 } catch (e: Exception) {
                     speak("Cámara no disponible")
                 }
                 dialog.dismiss()
             }
 
-            dialogView.findViewById<Button>(R.id.app_files)?.setOnClickListener {
-                try {
+            dialogView.findViewById<Button>(R.id.app_files)?.setOnClickListener {                try {
                     startActivity(Intent("android.intent.action.OPEN_DOCUMENT_TREE"))
                 } catch (e: Exception) {
                     speak("Archivos no disponible")
@@ -439,15 +431,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         } catch (e: Exception) {
             speak("Error al abrir menú")
-        }    }
+        }
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 100) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)        if (requestCode == 100) {
             if (grantResults.isNotEmpty() &&
                 grantResults[0] == PackageManager.PERMISSION_GRANTED
             ) {
