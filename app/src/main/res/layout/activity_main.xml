@@ -1,75 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#000000">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- Fondo AMOLED Negro -->
-    <View android:id="@+id/animated_bg" android:layout_width="match_parent" 
-        android:layout_height="match_parent" android:background="#000000"/>
+    <View
+        android:id="@+id/animated_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/animated_background"/>
 
-    <!-- ORB ANIMADO (Lottie) -->
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/orb_animation"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        app:lottie_rawRes="@raw/orb_animation"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:alpha="0.9"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-    <!-- Contenido principal -->
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:orientation="vertical" android:gravity="center_horizontal" android:padding="20dp">
+        <TextView
+            android:id="@+id/tv_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21:21"
+            android:textSize="48sp"
+            android:textColor="#004D40"
+            android:fontFamily="@font/samsungsans_medium"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"/>
 
-        <!-- Hora -->
-        <TextView android:id="@+id/tv_current_time" android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" android:text="21:21" android:textSize="52sp" 
-            android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium" 
-            android:layout_marginTop="40dp" android:layout_marginBottom="20dp" 
-            android:elevation="4dp" android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/avatar_pensativo"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"/>
 
-        <!-- Espacio para el orb -->
-        <View android:layout_width="match_parent" 
-            android:layout_height="250dp"
-            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/speech_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido a OASIS"
+            android:textSize="18sp"
+            android:textColor="#004D40"
+            android:fontFamily="@font/samsungsans_medium"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:elevation="4dp"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:padding="8dp">
 
-        <!-- Texto de estado -->
-        <TextView android:id="@+id/speech_bubble" android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" android:text="Bienvenido a OASIS" android:textSize="16sp" 
-            android:textColor="#FFFFFF" android:fontFamily="@font/google_sans_medium" android:textStyle="bold" 
-            android:layout_marginBottom="32dp" android:elevation="4dp"
-            android:shadowColor="#80000000" android:shadowDx="0" android:shadowDy="2" android:shadowRadius="4"/>
+            <Button
+                android:id="@+id/btn_call"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_phone"
+                android:text="Llamar"
+                android:textSize="16sp"
+                android:textColor="#004D40"
+                android:fontFamily="@font/samsungsans_medium"
+                android:elevation="4dp"/>
 
-        <!-- Botones 2x2 CIRCULARES PERFECTOS -->
-        <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" 
-            android:columnCount="2" android:rowCount="2" 
-            android:alignmentMode="alignMargins" android:columnOrderPreserved="false" 
-            android:padding="20dp">
+            <Button
+                android:id="@+id/btn_messages"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_message"
+                android:text="Mensajes"
+                android:textSize="16sp"
+                android:textColor="#004D40"
+                android:fontFamily="@font/samsungsans_medium"
+                android:elevation="4dp"/>
 
-            <Button android:id="@+id/btn_call" android:layout_width="130dp" android:layout_height="130dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
-                android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_phone" 
-                android:gravity="center" android:elevation="6dp"/>
+            <Button
+                android:id="@+id/btn_contacts"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_contacts"
+                android:text="Contactos"                android:textSize="16sp"
+                android:textColor="#004D40"
+                android:fontFamily="@font/samsungsans_medium"
+                android:elevation="4dp"/>
 
-            <Button android:id="@+id/btn_messages" android:layout_width="130dp" android:layout_height="130dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
-                android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_message" 
-                android:gravity="center" android:elevation="6dp"/>
-
-            <Button android:id="@+id/btn_contacts" android:layout_width="130dp" android:layout_height="130dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
-                android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_contacts" 
-                android:gravity="center" android:elevation="6dp"/>
-
-            <Button android:id="@+id/btn_more" android:layout_width="130dp" android:layout_height="130dp" 
-                android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="12dp" 
-                android:background="@drawable/glass_button_ripple" android:drawableTop="@drawable/ic_more" 
-                android:gravity="center" android:elevation="6dp"/>
+            <Button
+                android:id="@+id/btn_more"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_more"
+                android:text="Más"
+                android:textSize="16sp"
+                android:textColor="#004D40"
+                android:fontFamily="@font/samsungsans_medium"
+                android:elevation="4dp"/>
 
         </GridLayout>
 
     </LinearLayout>
+
 </FrameLayout>
