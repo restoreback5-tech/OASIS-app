@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "OASIS"
 include(":app")
 include(":core:sound")
+include(":core:tts")
