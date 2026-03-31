@@ -20,16 +20,15 @@
 
         <!-- Hora -->
         <TextView
-    android:id="@+id/tv_current_time"
-        style="@style/OASIS.Text.Large"
-    style="@style/OASIS.Text.Large"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="21:21"
-    android:textColor="#004D40"
-    android:layout_marginTop="32dp"
-    android:layout_marginBottom="16dp"
-    android:elevation="4dp"/>
+            android:id="@+id/tv_current_time"
+            style="@style/OASIS.Text.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21:21"
+            android:textColor="#004D40"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"/>
 
         <!-- Avatar -->
         <ImageView
@@ -42,16 +41,14 @@
 
         <!-- Texto de estado -->
         <TextView
-    android:id="@+id/speech_bubble"
-        style="@style/OASIS.Text.Medium"
-    style="@style/OASIS.Text.Medium"
-    android:text="Bienvenido a OASIS"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#004D40"
-    android:textStyle="bold"
-    android:layout_marginBottom="24dp"
-    android:elevation="4dp"/>
+            android:id="@+id/speech_bubble"
+            style="@style/OASIS.Text.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido a OASIS"
+            android:textColor="#004D40"
+            android:textStyle="bold"            android:layout_marginBottom="24dp"
+            android:elevation="4dp"/>
 
         <!-- Botones 2x2 con efecto glass -->
         <GridLayout
@@ -65,67 +62,62 @@
             android:padding="8dp">
 
             <Button
-    style="@style/OASIS.Button"
-        android:id="@+id/btn_call"
-    style="@style/OASIS.Button"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp"
-    android:background="@drawable/glass_button_ripple"
-    android:drawableTop="@drawable/ic_phone"
-    android:text="Llamar"
-    android:textColor="#004D40"
-    android:elevation="4dp"/>
+                android:id="@+id/btn_call"
+                style="@style/OASIS.Button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_phone"
+                android:text="Llamar"
+                android:textColor="#004D40"
+                android:elevation="4dp"/>
 
             <Button
-    style="@style/OASIS.Button"
-        android:id="@+id/btn_messages"
-    style="@style/OASIS.Button"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp"
-    android:background="@drawable/glass_button_ripple"
-    android:drawableTop="@drawable/ic_message"
-    android:text="Mensajes"
-    android:textColor="#004D40"
-    android:elevation="4dp"/>
+                android:id="@+id/btn_messages"
+                style="@style/OASIS.Button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_message"
+                android:text="Mensajes"
+                android:textColor="#004D40"
+                android:elevation="4dp"/>
 
             <Button
-    style="@style/OASIS.Button"
-        android:id="@+id/btn_contacts"
-    style="@style/OASIS.Button"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp"
-    android:background="@drawable/glass_button_ripple"
-    android:drawableTop="@drawable/ic_contacts"
-    android:text="Contactos"
-    android:textColor="#004D40"
-    android:elevation="4dp"/>
+                android:id="@+id/btn_contacts"
+                style="@style/OASIS.Button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_contacts"
+                android:text="Contactos"
+                android:textColor="#004D40"
+                android:elevation="4dp"/>
 
             <Button
-    style="@style/OASIS.Button"
-        android:id="@+id/btn_more"
-    style="@style/OASIS.Button"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_columnWeight="1"
-    android:layout_rowWeight="1"
-    android:layout_margin="12dp"
-    android:background="@drawable/glass_button_ripple"
-    android:drawableTop="@drawable/ic_more"
-    android:text="Más"
-    android:textColor="#004D40"
-    android:elevation="4dp"/>
+                android:id="@+id/btn_more"
+                style="@style/OASIS.Button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                android:background="@drawable/glass_button_ripple"
+                android:drawableTop="@drawable/ic_more"
+                android:text="Más"
+                android:textColor="#004D40"
+                android:elevation="4dp"/>
 
         </GridLayout>
 
     </LinearLayout>
 
-</FrameLayout>
+</FrameLayout>.
