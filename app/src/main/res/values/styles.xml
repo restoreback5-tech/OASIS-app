@@ -4,12 +4,10 @@
         <item name="android:fontFamily">@font/samsungsans_bold</item>
         <item name="android:textSize">48sp</item>
     </style>
-    
     <style name="OASIS.Text.Medium">
         <item name="android:fontFamily">@font/samsungsans_medium</item>
         <item name="android:textSize">18sp</item>
     </style>
-    
     <style name="OASIS.Button">
         <item name="android:fontFamily">@font/samsungsans_medium</item>
         <item name="android:textSize">16sp</item>

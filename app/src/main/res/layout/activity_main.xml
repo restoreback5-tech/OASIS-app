@@ -21,6 +21,7 @@
         <!-- Hora -->
         <TextView
     android:id="@+id/tv_current_time"
+        style="@style/OASIS.Text.Large"
     style="@style/OASIS.Text.Large"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
         <!-- Texto de estado -->
         <TextView
     android:id="@+id/speech_bubble"
+        style="@style/OASIS.Text.Medium"
     style="@style/OASIS.Text.Medium"
     android:text="Bienvenido a OASIS"
     android:layout_width="wrap_content"
@@ -63,7 +65,8 @@
             android:padding="8dp">
 
             <Button
-    android:id="@+id/btn_call"
+    style="@style/OASIS.Button"
+        android:id="@+id/btn_call"
     style="@style/OASIS.Button"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -77,7 +80,8 @@
     android:elevation="4dp"/>
 
             <Button
-    android:id="@+id/btn_messages"
+    style="@style/OASIS.Button"
+        android:id="@+id/btn_messages"
     style="@style/OASIS.Button"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -91,7 +95,8 @@
     android:elevation="4dp"/>
 
             <Button
-    android:id="@+id/btn_contacts"
+    style="@style/OASIS.Button"
+        android:id="@+id/btn_contacts"
     style="@style/OASIS.Button"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -105,7 +110,8 @@
     android:elevation="4dp"/>
 
             <Button
-    android:id="@+id/btn_more"
+    style="@style/OASIS.Button"
+        android:id="@+id/btn_more"
     style="@style/OASIS.Button"
     android:layout_width="0dp"
     android:layout_height="0dp"
