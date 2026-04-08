@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.oasis.app'
+    namespace 'com.oasis.app.legacy'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.oasis.app"
+        applicationId "com.oasis.app.legacy"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -42,7 +42,3 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
-
-// Lottie Animation
-
-// Lottie Animation

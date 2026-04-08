@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.oasis.app.legacy">
 
     <!-- Permisos necesarios -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -33,8 +34,8 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="OASIS"
-	android:theme="@style/Theme.OASIS"
+        android:label="OASIS Legacy"
+        android:theme="@style/Theme.OASIS"
         tools:targetApi="34">
 
         <activity
