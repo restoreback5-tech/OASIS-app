@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="OASIS.Text.Large">
+    <!-- Estilos base requeridos por el linker -->
+    <style name="OASIS" />
+    <style name="OASIS.Text" />
+
+    <!-- Estilos derivados -->
+    <style name="OASIS.Text.Large" parent="OASIS.Text">
         <item name="android:fontFamily">@font/samsungsans_bold</item>
         <item name="android:textSize">48sp</item>
     </style>
-    <style name="OASIS.Text.Medium">
+
+    <style name="OASIS.Text.Medium" parent="OASIS.Text">
         <item name="android:fontFamily">@font/samsungsans_medium</item>
         <item name="android:textSize">18sp</item>
     </style>
+
     <style name="OASIS.Button">
         <item name="android:fontFamily">@font/samsungsans_medium</item>
         <item name="android:textSize">16sp</item>
