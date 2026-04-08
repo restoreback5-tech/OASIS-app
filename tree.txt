@@ -1,0 +1,215 @@
+.
+ |-.git
+ |- |hooks
+ |- |info
+ |- |objects
+ |- | |pack
+ |- | |info
+ |- |refs
+ |- | |heads
+ |- | |tags
+ |- | |remotes
+ |- | | |origin
+ |- |logs
+ |- | |refs
+ |- | | |remotes
+ |- | | | |origin
+ |- | | |heads
+ |-.github
+ |- |workflows
+ |-.gradle
+ |- |8.5
+ |- | |checksums
+ |- | |dependencies-accessors
+ |- | |executionHistory
+ |- | |fileChanges
+ |- | |fileHashes
+ |- |9.4.1
+ |- | |checksums
+ |- | |fileChanges
+ |- | |fileHashes
+ |- |buildOutputCleanup
+ |- |vcs-1
+ |-app
+ |- |build
+ |- | |intermediates
+ |- | | |annotation_processor_list
+ |- | | | |debug
+ |- | | |compatible_screen_manifest
+ |- | | | |debug
+ |- | | |incremental
+ |- | | | |debug
+ |- | | | | |mergeDebugResources
+ |- | | | | | |merged.dir
+ |- | | | | | | |values-af
+ |- | | | | | | |values-am
+ |- | | | | | | |values-ar
+ |- | | | | | | |values-as
+ |- | | | | | | |values-az
+ |- | | | | | | |values-b+es+419
+ |- | | | | | | |values-b+sr+Latn
+ |- | | | | | | |values-be
+ |- | | | | | | |values-bg
+ |- | | | | | | |values-bn
+ |- | | | | | | |values-bs
+ |- | | | | | | |values-ca
+ |- | | | | | | |values-cs
+ |- | | | | | | |values-da
+ |- | | | | | | |values-de
+ |- | | | | | | |values-el
+ |- | | | | | | |values-en-rAU
+ |- | | | | | | |values-en-rCA
+ |- | | | | | | |values-en-rGB
+ |- | | | | | | |values-en-rIN
+ |- | | | | | | |values-en-rXC
+ |- | | | | | | |values-es-rUS
+ |- | | | | | | |values-es
+ |- | | | | | | |values-et
+ |- | | | | | | |values-eu
+ |- | | | | | | |values-fa
+ |- | | | | | | |values-fi
+ |- | | | | | | |values-fr-rCA
+ |- | | | | | | |values-fr
+ |- | | | | | | |values-gl
+ |- | | | | | | |values-gu
+ |- | | | | | | |values-h320dp-port-v13
+ |- | | | | | | |values-h360dp-land-v13
+ |- | | | | | | |values-h480dp-land-v13
+ |- | | | | | | |values-h550dp-port-v13
+ |- | | | | | | |values-h720dp-v13
+ |- | | | | | | |values-hdpi-v4
+ |- | | | | | | |values-hi
+ |- | | | | | | |values-hr
+ |- | | | | | | |values-hu
+ |- | | | | | | |values-hy
+ |- | | | | | | |values-in
+ |- | | | | | | |values-is
+ |- | | | | | | |values-it
+ |- | | | | | | |values-iw
+ |- | | | | | | |values-ja
+ |- | | | | | | |values-ka
+ |- | | | | | | |values-kk
+ |- | | | | | | |values-km
+ |- | | | | | | |values-kn
+ |- | | | | | | |values-ko
+ |- | | | | | | |values-ky
+ |- | | | | | | |values-land
+ |- | | | | | | |values-large-v4
+ |- | | | | | | |values-ldltr-v21
+ |- | | | | | | |values-ldrtl-v17
+ |- | | | | | | |values-lo
+ |- | | | | | | |values-lt
+ |- | | | | | | |values-lv
+ |- | | | | | | |values-mk
+ |- | | | | | | |values-ml
+ |- | | | | | | |values-mn
+ |- | | | | | | |values-mr
+ |- | | | | | | |values-ms
+ |- | | | | | | |values-my
+ |- | | | | | | |values-nb
+ |- | | | | | | |values-ne
+ |- | | | | | | |values-night-v8
+ |- | | | | | | |values-nl
+ |- | | | | | | |values-or
+ |- | | | | | | |values-pa
+ |- | | | | | | |values-pl
+ |- | | | | | | |values-port
+ |- | | | | | | |values-pt-rBR
+ |- | | | | | | |values-pt-rPT
+ |- | | | | | | |values-pt
+ |- | | | | | | |values-ro
+ |- | | | | | | |values-ru
+ |- | | | | | | |values-si
+ |- | | | | | | |values-sk
+ |- | | | | | | |values-sl
+ |- | | | | | | |values-small-v4
+ |- | | | | | | |values-sq
+ |- | | | | | | |values-sr
+ |- | | | | | | |values-sv
+ |- | | | | | | |values-sw
+ |- | | | | | | |values-sw600dp-v13
+ |- | | | | | | |values-ta
+ |- | | | | | | |values-te
+ |- | | | | | | |values-th
+ |- | | | | | | |values-tl
+ |- | | | | | | |values-tr
+ |- | | | | | | |values-uk
+ |- | | | | | | |values-ur
+ |- | | | | | | |values-uz
+ |- | | | | | | |values-v16
+ |- | | | | | | |values-v17
+ |- | | | | | | |values-v18
+ |- | | | | | | |values-v21
+ |- | | | | | | |values-v22
+ |- | | | | | | |values-v23
+ |- | | | | | | |values-v24
+ |- | | | | | | |values-v25
+ |- | | | | | | |values-v26
+ |- | | | | | | |values-v28
+ |- | | | | | | |values-v31
+ |- | | | | | | |values-v34
+ |- | | | | | | |values-vi
+ |- | | | | | | |values-w320dp-land-v13
+ |- | | | | | | |values-w360dp-port-v13
+ |- | | | | | | |values-w400dp-port-v13
+ |- | | | | | | |values-w600dp-land-v13
+ |- | | | | | | |values-watch-v20
+ |- | | | | | | |values-watch-v21
+ |- | | | | | | |values-xlarge-v4
+ |- | | | | | | |values-zh-rCN
+ |- | | | | | | |values-zh-rHK
+ |- | | | | | | |values-zh-rTW
+ |- | | | | | | |values-zu
+ |- | | | | | | |values
+ |- | | | | |packageDebugResources
+ |- | | | | | |merged.dir
+ |- | | | | | | |values
+ |- | | | |mergeDebugAssets
+ |- | | | |mergeDebugShaders
+ |- | | |local_only_symbol_list
+ |- | | | |debug
+ |- | | |manifest_merge_blame_file
+ |- | | | |debug
+ |- | | |merged_manifest
+ |- | | | |debug
+ |- | | |merged_manifests
+ |- | | | |debug
+ |- | | |merged_res
+ |- | | | |debug
+ |- | | |merged_res_blame_folder
+ |- | | | |debug
+ |- | | | | |out
+ |- | | | | | |multi-v2
+ |- | | | | | |single
+ |- | | |navigation_json
+ |- | | | |debug
+ |- | | |packaged_manifests
+ |- | | | |debug
+ |- | | |packaged_res
+ |- | | | |debug
+ |- | | | | |anim
+ |- | | | | |drawable
+ |- | | | | |layout
+ |- | | | | |mipmap-anydpi-v26
+ |- | | | | |raw
+ |- | | | | |values
+ |- | | |source_set_path_map
+ |- | | | |debug
+ |- | |outputs
+ |- | | |logs
+ |- |src
+ |- | |main
+ |- | | |java
+ |- | | | |com
+ |- | | | | |oasis
+ |- | | | | | |app
+ |- | | |res
+ |- | | | |anim
+ |- | | | |drawable
+ |- | | | |font
+ |- | | | |layout
+ |- | | | |mipmap-anydpi-v26
+ |- | | | |raw
+ |- | | | |values
+ |-gradle
+ |- |wrapper
